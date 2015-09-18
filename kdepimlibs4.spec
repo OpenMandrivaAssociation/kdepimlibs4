@@ -15,6 +15,7 @@ Url:		https://projects.kde.org/projects/kde/kdepimlibs
 %define ftpdir stable
 %endif
 Source0:	http://download.kde.org/%{ftpdir}/applications/14.12.2/src/%{oname}-%{version}.tar.xz
+Patch1:		kdepimlibs-4.14.10-dont-build-tests.patch
 BuildRequires:	automoc4
 BuildRequires:	kdelibs-devel >= %{version}
 BuildRequires:	boost-devel
@@ -53,10 +54,7 @@ Conflicts:	akonadi-kde < 3:4.12.0
 This packages contains all icons, config file etc... of kdepimlibs4.
 
 %files core
-%{_kde_bindir}/akonadi_benchmarker
-%{_kde_bindir}/akonadi2xml
-%{_kde_bindir}/akonaditest
-%{_kde_libdir}/kde4/akonadi_knut_resource.so
+%exclude %{_kde_bindir}/akonadi2xml
 %{_kde_libdir}/kde4/akonadi_serializer_socialfeeditem.so
 %{_kde_libdir}/kde4/kabc_directory.so
 %{_kde_libdir}/kde4/kabc_file.so
@@ -67,11 +65,8 @@ This packages contains all icons, config file etc... of kdepimlibs4.
 %{_kde_libdir}/kde4/kcm_akonadicontact_actions.so
 %{_kde_libdir}/kde4/kcm_kresources.so
 %{_kde_libdir}/kde4/kcm_mailtransport.so
-%{_kde_libdir}/kde4/akonadi/akonadi_test_searchplugin.so
-%{_kde_libdir}/kde4/akonadi/akonaditestsearchplugin.desktop
 %{_kde_appsdir}/akonadi/
 %{_kde_appsdir}/akonadi-kde/
-%{_kde_appsdir}/akonadi_knut_resource/
 %{_kde_appsdir}/kabc/
 %{_kde_appsdir}/kconf_update/mailtransports.upd
 %{_kde_appsdir}/kconf_update/migrate-transports.pl
@@ -90,7 +85,6 @@ This packages contains all icons, config file etc... of kdepimlibs4.
 %{_kde_services}/kresources/kcal_manager.desktop
 %{_kde_servicetypes}/*.desktop
 %{_datadir}/dbus-1/interfaces/*
-%{_kde_datadir}/akonadi/agents/knutresource.desktop
 %{_kde_datadir}/config.kcfg/*
 %{_kde_datadir}/mime/packages/kdepimlibs-mime.xml
 %{_kde_datadir}/mime/packages/x-vnd.akonadi.socialfeeditem.xml
@@ -783,8 +777,6 @@ browsing.
 %files devel
 %{_kde_includedir}/*
 %{_kde_libdir}/*.so
-# kimaptest gets built as static lib only
-%{_kde_libdir}/libkimaptest.a
 %{_kde_datadir}/apps/cmake/*/*
 %{_kde_libdir}/gpgmepp/*.cmake
 %{_kde_libdir}/kde4/plugins/designer/*.so
@@ -794,11 +786,12 @@ browsing.
 
 %prep
 %setup -q -n %{oname}-%{version}
+%apply_patches
 # required for cmake now
 sed -i '1s/^/cmake_minimum_required(VERSION 2.4)\n/' CMakeLists.txt
 
 %build
-%cmake_kde4
+%cmake_kde4 -DKDE4_BUILD_TESTS=OFF
 %make
 
 %install
