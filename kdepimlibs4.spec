@@ -54,7 +54,6 @@ Conflicts:	akonadi-kde < 3:4.12.0
 This packages contains all icons, config file etc... of kdepimlibs4.
 
 %files core
-%exclude %{_kde_bindir}/akonadi2xml
 %{_kde_libdir}/kde4/akonadi_serializer_socialfeeditem.so
 %{_kde_libdir}/kde4/kabc_directory.so
 %{_kde_libdir}/kde4/kabc_file.so
@@ -796,6 +795,9 @@ sed -i '1s/^/cmake_minimum_required(VERSION 2.4)\n/' CMakeLists.txt
 
 %install
 %makeinstall_std -C build
+
+# dont want this
+rm -f %{buildroot}/%{_kde_bindir}/akonadi2xml
 
 %changelog
 * Tue Nov 11 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:4.14.3-1
