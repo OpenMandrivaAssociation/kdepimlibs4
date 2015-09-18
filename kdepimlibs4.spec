@@ -795,7 +795,7 @@ browsing.
 %prep
 %setup -q -n %{oname}-%{version}
 # required for cmake now
-sed -i '1s/^/cmake_minimum_required(VERSION 2.8)\n/' CMakeLists.txt
+sed -i '1s/^/cmake_minimum_required(VERSION 2.4)\n/' CMakeLists.txt
 
 %build
 %cmake_kde4
