@@ -3,7 +3,7 @@
 Summary:	Libraries of the KDE-PIM project
 Name:		kdepimlibs4
 Version:	4.14.10
-Release:	6
+Release:	7
 Epoch:		3
 Group:		Graphical desktop/KDE
 License:	ARTISTIC BSD GPL_V2 LGPL_V2 QPL_V1.0
@@ -54,6 +54,8 @@ Conflicts:	akonadi-kde < 3:4.12.0
 This packages contains all icons, config file etc... of kdepimlibs4.
 
 %files core
+%exclude %_kde_bindir/akonadi2xml
+%exclude %_kde_datadir/config.kcfg/mailtransport.kcfg
 %{_kde_libdir}/kde4/akonadi_serializer_socialfeeditem.so
 %{_kde_libdir}/kde4/kabc_directory.so
 %{_kde_libdir}/kde4/kabc_file.so
@@ -84,10 +86,11 @@ This packages contains all icons, config file etc... of kdepimlibs4.
 %{_kde_services}/kresources/kcal_manager.desktop
 %{_kde_servicetypes}/*.desktop
 %{_datadir}/dbus-1/interfaces/*
-%{_kde_datadir}/config.kcfg/*
 %{_kde_datadir}/mime/packages/kdepimlibs-mime.xml
 %{_kde_datadir}/mime/packages/x-vnd.akonadi.socialfeeditem.xml
-%{_kde_docdir}/HTML/en/kcontrol/kresources
+%exclude %_kde_datadir/config.kcfg/recentcontactscollections.kcfg
+%exclude %_kde_datadir/config.kcfg/resourcebase.kcfg
+%exclude %_kde_datadir/config.kcfg/specialmailcollections.kcfg%{_kde_docdir}/HTML/en/kcontrol/kresources
 %dir %{_kde_docdir}/HTML/en/kioslave
 
 #----------------------------------------------------------------------------
