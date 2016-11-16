@@ -54,8 +54,6 @@ Conflicts:	akonadi-kde < 3:4.12.0
 This packages contains all icons, config file etc... of kdepimlibs4.
 
 %files core
-%exclude %_kde_bindir/akonadi2xml
-%exclude %_kde_datadir/config.kcfg/mailtransport.kcfg
 %{_kde_libdir}/kde4/akonadi_serializer_socialfeeditem.so
 %{_kde_libdir}/kde4/kabc_directory.so
 %{_kde_libdir}/kde4/kabc_file.so
@@ -88,10 +86,8 @@ This packages contains all icons, config file etc... of kdepimlibs4.
 %{_datadir}/dbus-1/interfaces/*
 %{_kde_datadir}/mime/packages/kdepimlibs-mime.xml
 %{_kde_datadir}/mime/packages/x-vnd.akonadi.socialfeeditem.xml
-%exclude %_kde_datadir/config.kcfg/recentcontactscollections.kcfg
-%exclude %_kde_datadir/config.kcfg/resourcebase.kcfg
-%exclude %_kde_datadir/config.kcfg/specialmailcollections.kcfg%{_kde_docdir}/HTML/en/kcontrol/kresources
 %dir %{_kde_docdir}/HTML/en/kioslave
+%{_kde_docdir}/HTML/en/kcontrol/kresources
 
 #----------------------------------------------------------------------------
 
@@ -208,7 +204,6 @@ KDE 4 nntp module.
 %package -n %{libakonadi_calendar}
 Summary:	KDE 4 core library
 Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
 
 %description -n %{libakonadi_calendar}
 KDE 4 core library.
@@ -224,7 +219,6 @@ KDE 4 core library.
 %package -n %{libakonadi_contact}
 Summary:	KDE 4 core library
 Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
 
 %description -n %{libakonadi_contact}
 KDE 4 core library.
@@ -240,7 +234,6 @@ KDE 4 core library.
 %package -n %{libakonadi_kabc}
 Summary:	KDE 4 core library
 Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
 
 %description -n %{libakonadi_kabc}
 KDE 4 core library.
@@ -256,7 +249,6 @@ KDE 4 core library.
 %package -n %{libakonadi_kcal}
 Summary:	KDE 4 core library
 Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
 
 %description -n %{libakonadi_kcal}
 KDE 4 core library.
@@ -272,7 +264,6 @@ KDE 4 core library.
 %package -n %{libakonadi_kde}
 Summary:	KDE 4 core library
 Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
 
 %description -n %{libakonadi_kde}
 KDE 4 core library.
@@ -288,7 +279,6 @@ KDE 4 core library.
 %package -n %{libakonadi_kmime}
 Summary:	KDE 4 core library
 Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
 
 %description -n %{libakonadi_kmime}
 KDE 4 core library.
@@ -304,7 +294,6 @@ KDE 4 core library.
 %package -n %{libakonadi_notes}
 Summary:	KDE 4 core library
 Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
 
 %description -n %{libakonadi_notes}
 KDE 4 core library.
@@ -320,7 +309,6 @@ KDE 4 core library.
 %package -n %{libakonadi_socialutils}
 Summary:	Akonadi social utilities library
 Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
 
 %description -n %{libakonadi_socialutils}
 Akonadi social utilities library.
@@ -351,7 +339,6 @@ KDE 4 library.
 %package -n %{libkabc}
 Summary:	KDE 4 core library
 Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
 
 %description -n %{libkabc}
 KDE 4 core library.
@@ -367,7 +354,6 @@ KDE 4 core library.
 %package -n %{libkblog}
 Summary:	KDE 4 core library
 Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
 
 %description -n %{libkblog}
 KDE 4 core library.
@@ -383,7 +369,6 @@ KDE 4 core library.
 %package -n %{libkabc_file_core}
 Summary:	KDE 4 core library
 Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
 
 %description -n %{libkabc_file_core}
 KDE 4 core library.
@@ -399,7 +384,6 @@ KDE 4 core library.
 %package -n %{libkcal}
 Summary:	KDE 4 core library
 Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
 
 %description -n %{libkcal}
 KDE 4 core library.
@@ -415,7 +399,6 @@ KDE 4 core library.
 %package -n %{libkimap}
 Summary:	KDE 4 core library
 Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
 
 %description -n %{libkimap}
 KDE 4 core library.
@@ -431,7 +414,6 @@ KDE 4 core library.
 %package -n %{libkldap}
 Summary:	KDE 4 core library
 Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
 
 %description -n %{libkldap}
 KDE 4 core library.
@@ -447,8 +429,6 @@ KDE 4 core library.
 %package -n %{libkmbox}
 Summary:	KDE 4 core library
 Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
-Obsoletes:	%{_lib}mbox4 < 2:4.5.71
 
 %description -n %{libkmbox}
 KDE 4 core library.
@@ -464,7 +444,6 @@ KDE 4 core library.
 %package -n %{libkmime}
 Summary:	KDE 4 core library
 Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
 
 %description -n %{libkmime}
 KDE 4 core library.
@@ -480,7 +459,6 @@ KDE 4 core library.
 %package -n %{libkpimutils}
 Summary:	KDE 4 core library
 Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
 
 %description -n %{libkpimutils}
 KDE 4 core library.
@@ -496,7 +474,6 @@ KDE 4 core library.
 %package -n %{libkresources}
 Summary:	KDE 4 core library
 Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
 
 %description -n %{libkresources}
 KDE 4 core library.
@@ -512,7 +489,6 @@ KDE 4 core library.
 %package -n %{libktnef}
 Summary:	KDE 4 core library
 Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
 
 %description -n %{libktnef}
 KDE 4 core library.
@@ -528,7 +504,6 @@ KDE 4 core library.
 %package -n %{libkxmlrpcclient}
 Summary:	KDE 4 core library
 Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
 
 %description -n %{libkxmlrpcclient}
 KDE 4 core library.
@@ -544,7 +519,6 @@ KDE 4 core library.
 %package -n %{libmailtransport}
 Summary:	KDE 4 core library
 Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
 
 %description -n %{libmailtransport}
 KDE 4 core library.
@@ -560,7 +534,6 @@ KDE 4 core library.
 %package -n %{libsyndication}
 Summary:	KDE 4 core library
 Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
 
 %description -n %{libsyndication}
 KDE 4 core library.
@@ -591,7 +564,6 @@ KDE 4 core library.
 %package -n %{libgpgmepp}
 Summary:	KDE 4 core library
 Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
 
 %description -n %{libgpgmepp}
 KDE 4 core library.
@@ -607,7 +579,6 @@ KDE 4 core library.
 %package -n %{libkpimidentities}
 Summary:	KDE 4 core library
 Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
 
 %description -n %{libkpimidentities}
 KDE 4 core library.
@@ -623,7 +594,6 @@ KDE 4 core library.
 %package -n %{libkholidays}
 Summary:	KDE 4 core library
 Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
 
 %description -n %{libkholidays}
 KDE 4 core library.
@@ -639,7 +609,6 @@ KDE 4 core library.
 %package -n %{libkpimtextedit}
 Summary:	KDE 4 core library
 Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
 
 %description -n %{libkpimtextedit}
 KDE 4 core library.
@@ -655,7 +624,6 @@ KDE 4 core library.
 %package -n %{libmicroblog}
 Summary:	KDE 4 core library
 Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
 
 %description -n %{libmicroblog}
 KDE 4 core library.
@@ -671,7 +639,6 @@ KDE 4 core library.
 %package -n %{libkontactinterface}
 Summary:	KDE 4 core library
 Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
 
 %description -n %{libkontactinterface}
 KDE 4 core library.
@@ -687,7 +654,6 @@ KDE 4 core library.
 %package -n %{libkcalcore}
 Summary:	KDE 4 core library
 Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
 
 %description -n %{libkcalcore}
 KDE 4 core library.
@@ -703,7 +669,6 @@ KDE 4 core library.
 %package -n %{libkcalutils}
 Summary:	KDE 4 core library
 Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
 
 %description -n %{libkcalutils}
 KDE 4 core library.
@@ -719,7 +684,6 @@ KDE 4 core library.
 %package -n %{libkalarmcal}
 Summary:	KDE 4 core library
 Group:		System/Libraries
-Requires:	%{name}-core = %{EVRD}
 
 %description -n %{libkalarmcal}
 KDE 4 core library.
@@ -804,3 +768,9 @@ rm -f %{buildroot}/%{_kde_bindir}/akonadi2xml
 
 # (tpg) remove this as it conflicts with kmailtransport package
 rm -rf %{buildroot}%{_datadir}/config.kcfg/mailtransport.kcfg
+
+# (tpg) remove these as them are not needed
+rm -rf %{buildroot}%{_datadir}/config.kcfg/recentcontactscollections.kcfg
+rm -rf %{buildroot}%{_datadir}/config.kcfg/resourcebase.kcfg
+rm -rf %{buildroot}%{_datadir}/config.kcfg/specialmailcollections.kcfg
+
