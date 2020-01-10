@@ -752,7 +752,7 @@ browsing.
 
 %prep
 %setup -q -n %{oname}-%{version}
-%apply_patches
+%autopatch -p1
 # required for cmake now
 sed -i '1s/^/cmake_minimum_required(VERSION 2.4)\n/' CMakeLists.txt
 
