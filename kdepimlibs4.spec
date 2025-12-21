@@ -16,6 +16,7 @@ Url:		https://projects.kde.org/projects/kde/kdepimlibs
 %endif
 Source0:	http://download.kde.org/%{ftpdir}/applications/14.12.2/src/%{oname}-%{version}.tar.xz
 Patch1:		kdepimlibs-4.14.10-dont-build-tests.patch
+BuildRequires:	make
 BuildRequires:	automoc4
 BuildRequires:	kdelibs-devel >= %{version}
 BuildRequires:	boost-devel
